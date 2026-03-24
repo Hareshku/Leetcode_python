@@ -12,7 +12,10 @@ class Solution:
                     if j < n - 1 and grid[i][j + 1] == 1:
                         ans -= 2
         return ans
+
+# case-1
 grid = [[1]]
+# case-2
 # grid = [[0,1,0,0],[1,1,1,0],[0,1,0,0],[1,1,0,0]]
 obj= Solution()
 print(obj.islandPerimeter(grid))
