@@ -7,5 +7,7 @@ class Solution:
         s[:] = s[::-1]
 
 str= ["h", "e", "l", "l", "o"]
+print(str)
 obj= Solution()
-print(obj.reverseString(str))
+obj.reverseString(str)
+print(str)
