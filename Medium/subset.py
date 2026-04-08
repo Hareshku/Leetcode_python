@@ -14,6 +14,5 @@ class Solution: # bfs
         return result
       
 nums = [1,2,3]
-
 obj = Solution()
 print(obj.subsets(nums))
