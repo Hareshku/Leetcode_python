@@ -4,7 +4,7 @@ class Solution: # iterative
         res = [[]]
 
         if nums is None or len(nums) == 0:
-            return ans
+            return res
 
         for num in nums:
             new_res = []
