@@ -6,6 +6,7 @@ class Solution:
         def quick_sort(l, r):
             if l >= r:
                 return
+# import randint from python package
             x = nums[randint(l, r)]
             i, j, k = l - 1, r + 1, l
             while k < j:
