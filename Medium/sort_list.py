@@ -5,6 +5,7 @@ class ListNode:
 
 
 class Solution:
+    # main function to sort
     def sortList(self, head: ListNode) -> ListNode:
         if head is None or head.next is None:
             return head
