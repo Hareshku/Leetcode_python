@@ -2,6 +2,7 @@
 from itertools import pairwise
 from typing import List
 class Solution:
+    #import list from typing
     def findMinDifference(self, timePoints: List[str]) -> int:
         if len(timePoints) > 24 * 60:
             return 0
