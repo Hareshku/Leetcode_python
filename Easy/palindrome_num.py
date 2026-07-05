@@ -10,9 +10,14 @@ num = int(input("Enter the number: "))
 # result = "Yes palindrome" if reverse==num else "not a palindrome"
   
 # print(result)
-reverse= int(str(num)[:: -1])
+  
 
-if reverse== num:
-  print("palindrome")
-else:
-  print("not")
+# input_value = input("Enter a number: ")
+# def is_palindrome(input_value):
+#     if input_value == input_value[::-1]:
+#         return True
+#     else:
+#         return False
+      
+# result = is_palindrome(input_value)
+# print(f"Is the number a palindrome? {result}")
