@@ -74,6 +74,8 @@
 
 # print(fib(6))
 
+
+# time complexity O(3**n)
 # def fib(n):
 #    if n==0:
 #     return 0
@@ -95,13 +97,38 @@
 #         return self.tribonacci(n-1)+self.tribonacci(n-2)+self.tribonacci(n-3)
 
 # Find if a givn number is the power of 2 
+# time complexity O(log n)
+# class Solution:
+#     def isPowerOfTwo(self, n: int) -> bool:
+#         if n<=0: return False
+#         if n==1: return True
+#         if n%2!=0: return False
 
-class Solution:
-    def isPowerOfTwo(self, n: int) -> bool:
-        if n<=0: return False
-        if n==1: return True
-        if n%2!=0: return False
+#         return self.isPowerOfTwo(n//2)
 
-        return self.isPowerOfTwo(n//2)
 
-    
+# Find if a given number power of 3
+# time complexity O(log n)
+# class Solution:
+#     def isPowerOfThree(self, n: int) -> bool:
+#         if n <=0:
+#             return False
+#         if n ==1:
+#             return True
+#         if n%3!=0:
+#             return False
+#         return self.isPowerOfThree(n//3)
+
+# Find the GCD of two numbers
+# Euclidean formula is used to calculate GCD 
+# time complexity O(log(min(a,b))) 
+# def gcd(a,b):
+#     if b==0:
+#         return a 
+#     return gcd(b, a%b)
+
+# def lcm(a, b):      #Find LCM
+#     return a*b//gcd(a,b) 
+
+# print(gcd(15, 50))
+# print(lcm(15, 50))
