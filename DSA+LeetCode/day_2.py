@@ -132,3 +132,27 @@
 
 # print(gcd(15, 50))
 # print(lcm(15, 50))
+
+
+# Find x to the power n 
+# time complexity O(log n) 
+class Solution:
+    def findPow(self, x, n):
+        # base case 
+        if n == 0:
+            return 1
+        # recursive case 
+        a = self.findPow(x, n//2)
+        # If power is even 
+        if n % 2== 0:
+            return a*a
+        else:  #If power is odd
+            return a*a*x
+        
+
+    def myPow(self, x: float, n: int) -> float:
+        if n>=0: #If power is positive
+            return self.findPow(x, n)
+        else:  # If power is nagative (-)
+            return 1/ self.findPow(x, n*(-1))
+        
