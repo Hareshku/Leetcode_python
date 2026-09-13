@@ -136,23 +136,74 @@
 
 # Find x to the power n 
 # time complexity O(log n) 
-class Solution:
-    def findPow(self, x, n):
-        # base case 
-        if n == 0:
-            return 1
-        # recursive case 
-        a = self.findPow(x, n//2)
-        # If power is even 
-        if n % 2== 0:
-            return a*a
-        else:  #If power is odd
-            return a*a*x
+# class Solution:
+#     def findPow(self, x, n):
+#         # base case 
+#         if n == 0:
+#             return 1
+#         # recursive case 
+#         a = self.findPow(x, n//2)
+#         # If power is even 
+#         if n % 2== 0:
+#             return a*a
+#         else:  #If power is odd
+#             return a*a*x
         
 
-    def myPow(self, x: float, n: int) -> float:
-        if n>=0: #If power is positive
-            return self.findPow(x, n)
-        else:  # If power is nagative (-)
-            return 1/ self.findPow(x, n*(-1))
+#     def myPow(self, x: float, n: int) -> float:
+#         if n>=0: #If power is positive
+#             return self.findPow(x, n)
+#         else:  # If power is nagative (-)
+#             return 1/ self.findPow(x, n*(-1))
         
+# I am thinking of an animal.
+# Can you guess what animal it is?
+# Ask me a yes or no question: does it live on land?
+# Yes.
+# Ask me a yes or no question: is it a mammal?
+# Yes.
+# Ask me a yes or no question: is it commonly kept as a pet?
+# No.
+# Ask me a yes or no question: is it larger than a person?
+# Yes.
+# Ask me a yes or no question: does it have a long neck?
+# No.
+# Ask me a yes or no question: does it have stripes?
+# No.
+# Ask me a yes or no question: does it have a trunk?
+# Yes.
+# Ask me a yes or no question: elephant
+# Correct!
+
+
+from animal import get_random_animal
+from ai import call_gpt
+
+
+def main():
+    animal = get_random_animal()
+
+    print("I am thinking of an animal.")
+    print("Can you guess what animal it is?")
+
+    while True:
+        question = input("Ask me a yes or no question: ")
+
+        if question.lower() == animal.lower():
+            print("Correct!")
+            break
+
+        prompt = f"""
+        The secret animal is {animal}.
+        The user asks: {question}
+
+        Answer the user's question with only "Yes." or "No."
+        Do not reveal the name of the animal.
+        """
+
+        answer = call_gpt(prompt)
+        print(answer)
+
+
+if __name__ == "__main__":
+    main()
