@@ -85,47 +85,74 @@
 # O(log n)
 # class Solution:
 #     def countDigits(self, num: int) -> int:
-#         ans = 0
-#         temp =num
+# num = int(input("Enter the digit to check if the number divides it: "))
+# ans = 0
+# temp =num
+# while temp>0:
+#     r = temp%10
+#     if r!=0 and num %r == 0:
+#         ans+=1
+#     temp//=10
+# print(ans)
 
-#         while temp>0:
-#             r = temp%10
-#             if num %r == 0:
-#                 ans+=1
-#             temp//=10
-#         return ans
+#  num = int(input("Enter the digit to check if the number divides it: "))
+# temp =num
+# ans = 0
+# list_ = []
 
+# while temp>0:
+#     r = temp%10
+#     if r!=0 and num%r ==0:
+#         ans+=1
+#         list_.append(r)
+#     temp//=10
+# print(ans, list_)
 
 # # How many numbers are the small than the current number 
 # O(n**2)
 # class Solution:
 #     def smallerNumbersThanCurrent(self, nums: List[int]) -> List[int]:
-#         ans =[]
-#         for i in nums:
-#             count = 0
-#             for j in nums:
-#                 if i>j:
-#                     count+=1
-#             ans.append(count)
+nums = [4,5,2,6,9]
+ans = []
+for i in nums:
+    count =0
+    for j in nums:
+        if i>j:
+            count+=1
+    ans.append(count)
+print(ans)
 #         return ans
         
 
 # Sort an array 
 # first way using buildtin method
-O(n log n)
-numbers = [5, 3, 8, 1, 2]
-numbers.sort() # Sorts in ascending order
-print(numbers) 
+# O(n log n)
+# numbers = [5, 3, 8, 1, 2]
+# numbers.sort() # Sorts in ascending order
+# print(numbers) 
 
-# 2nd way without builtin method 
-O(n**2)
-class Solution:
-    def sortArray(self, nums: List[int]) -> List[int]:
-        n = len(nums)
-        for i in range(n):
-            for j in range(n-i-1):
-                if nums[j]>nums[j+1]:
-                    temp = nums[j]
-                    nums[j]= nums[j+1]
-                    nums[j+1]=temp
-        return nums
+# # 2nd way without builtin method 
+# O(n**2)
+# class Solution:
+#     def sortArray(self, nums: List[int]) -> List[int]:
+nums = [3,6,2,8,1]
+# n = len(nums)
+# for i in range(n):
+#     for j in range(n-i-1):
+#         if nums[j]>nums[j+1]:
+#             temp = nums[j]
+#             nums[j]= nums[j+1]
+#             nums[j+1]=temp
+# print(nums)
+#         return nums
+
+
+
+n = len(nums)
+for i in range(n):
+    for j in range(n-i-1):
+        if nums[j]>nums[j+1]:
+            temp = nums[j]
+            nums[j]=nums[j+1]
+            nums[j+1]= temp
+print(nums)
